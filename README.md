@@ -30,3 +30,5 @@ Then execute `systemctl restart supervisor.service`, then if you run `supervisor
 
 From here, link your Grafana datasource with your FlightSQL Influx datasource, information for this is available on Google.
 Once connected, import you the `Grafana Dashboard.json` file included in this git repo, this should be your graphing setup.
+
+![solar](https://github.com/JoshIPT/x1smart-influx/assets/44308535/d4d2b63d-0a47-4047-b0e9-90b9d7a912a0)
