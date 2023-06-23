@@ -58,7 +58,7 @@
       }
     ]
   },
-  "description": "Iammeter Solar PV System,\r\nYou can monitor the energy flow of the solar pv system.\r\n",
+  "description": "Solax PV Monitoring Dashboard",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "gnetId": 13295,
