@@ -1,3 +1,6 @@
+# Solax X1-Smart to Influx DB
+## With bonus Grafana Dashboard
+
 Sign up for InfluxDB and Grafana cloud accounts.
 
 Generate an API key and save.
