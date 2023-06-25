@@ -38,7 +38,8 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "mode": "palette-classic",
+            "seriesBy": "last"
           },
           "custom": {
             "axisCenteredZero": false,
@@ -47,15 +48,15 @@
             "axisPlacement": "auto",
             "barAlignment": 0,
             "drawStyle": "line",
-            "fillOpacity": 40,
-            "gradientMode": "none",
+            "fillOpacity": 100,
+            "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
             "lineInterpolation": "linear",
-            "lineWidth": 2,
+            "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
@@ -265,7 +266,7 @@
           "hide": false,
           "limit": "",
           "orderBy": "",
-          "queryText": "SELECT value,time FROM iox.consumed_power WHERE value > -1",
+          "queryText": "SELECT value,time FROM consumed_power WHERE value > -1",
           "rawEditor": false,
           "refId": "C",
           "table": "consumed_power",
@@ -376,6 +377,7 @@
       ],
       "timeFrom": "now/d",
       "title": "Grid Power (V)",
+      "transparent": true,
       "type": "gauge"
     },
     {
@@ -477,6 +479,7 @@
       ],
       "timeFrom": "now/d",
       "title": "Inverter Temp (°C)",
+      "transparent": true,
       "type": "gauge"
     },
     {
@@ -484,6 +487,7 @@
         "type": "influxdata-flightsql-datasource",
         "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -495,30 +499,34 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 0,
-            "gradientMode": "none",
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
+            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "none"
+              "mode": "normal"
             },
             "thresholdsStyle": {
               "mode": "off"
             }
           },
+          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -543,27 +551,33 @@
         "x": 0,
         "y": 8
       },
-      "id": 58,
+      "hideTimeOverride": false,
+      "id": 61,
+      "interval": "1h",
+      "links": [],
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "10.0.1-cloud.2.a7a20fbf",
       "targets": [
         {
           "columns": [
             {
-              "value": "time"
+              "value": "value"
             },
             {
-              "value": "value"
+              "value": "time"
             }
           ],
           "datasource": {
@@ -574,7 +588,7 @@
           "groupBy": "",
           "limit": "",
           "orderBy": "",
-          "queryText": "SELECT time,value FROM pv1_current",
+          "queryText": "SELECT value,time FROM iox.pv1_current",
           "rawEditor": false,
           "refId": "A",
           "table": "pv1_current",
@@ -585,7 +599,9 @@
           ]
         }
       ],
+      "timeFrom": "now/d",
       "title": "PV1 Current (A)",
+      "transparent": true,
       "type": "timeseries"
     },
     {
@@ -605,7 +621,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
-            "drawStyle": "bars",
+            "drawStyle": "line",
             "fillOpacity": 100,
             "gradientMode": "opacity",
             "hideFrom": {
@@ -614,6 +630,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -660,7 +679,9 @@
       "links": [],
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -702,6 +723,7 @@
       ],
       "timeFrom": "now/d",
       "title": "PV1 Power (W)",
+      "transparent": true,
       "type": "timeseries"
     },
     {
@@ -709,6 +731,7 @@
         "type": "influxdata-flightsql-datasource",
         "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -720,30 +743,34 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
-            "drawStyle": "bars",
-            "fillOpacity": 0,
-            "gradientMode": "none",
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "opacity",
             "hideFrom": {
               "legend": false,
               "tooltip": false,
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
               "type": "linear"
             },
-            "showPoints": "auto",
+            "showPoints": "never",
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "none"
+              "mode": "normal"
             },
             "thresholdsStyle": {
               "mode": "off"
             }
           },
+          "links": [],
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -768,27 +795,33 @@
         "x": 12,
         "y": 8
       },
-      "id": 59,
+      "hideTimeOverride": false,
+      "id": 62,
+      "interval": "1h",
+      "links": [],
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
         },
         "tooltip": {
-          "mode": "single",
+          "mode": "multi",
           "sort": "none"
         }
       },
+      "pluginVersion": "10.0.1-cloud.2.a7a20fbf",
       "targets": [
         {
           "columns": [
             {
-              "value": "time"
+              "value": "value"
             },
             {
-              "value": "value"
+              "value": "time"
             }
           ],
           "datasource": {
@@ -799,7 +832,7 @@
           "groupBy": "",
           "limit": "",
           "orderBy": "",
-          "queryText": "SELECT time,value FROM pv2_current",
+          "queryText": "SELECT value,time FROM iox.pv2_current",
           "rawEditor": false,
           "refId": "A",
           "table": "pv2_current",
@@ -810,7 +843,9 @@
           ]
         }
       ],
+      "timeFrom": "now/d",
       "title": "PV2 Current (A)",
+      "transparent": true,
       "type": "timeseries"
     },
     {
@@ -827,10 +862,10 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "Energy (kWh/interval)",
+            "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
-            "drawStyle": "bars",
+            "drawStyle": "line",
             "fillOpacity": 100,
             "gradientMode": "opacity",
             "hideFrom": {
@@ -839,6 +874,9 @@
               "viz": false
             },
             "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
             "lineWidth": 1,
             "pointSize": 5,
             "scaleDistribution": {
@@ -871,42 +909,7 @@
           },
           "unit": "watt"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Production"
-            },
-            "properties": [
-              {
-                "id": "custom.drawStyle",
-                "value": "line"
-              },
-              {
-                "id": "color",
-                "value": {
-                  "fixedColor": "rgba(25, 115, 14, 0.51)",
-                  "mode": "fixed"
-                }
-              },
-              {
-                "id": "custom.fillOpacity",
-                "value": 0
-              },
-              {
-                "id": "custom.lineWidth",
-                "value": 0
-              },
-              {
-                "id": "custom.stacking",
-                "value": {
-                  "group": "A",
-                  "mode": "none"
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 6,
@@ -915,12 +918,14 @@
         "y": 8
       },
       "hideTimeOverride": false,
-      "id": 53,
+      "id": 63,
       "interval": "1h",
       "links": [],
       "options": {
         "legend": {
-          "calcs": [],
+          "calcs": [
+            "lastNotNull"
+          ],
           "displayMode": "list",
           "placement": "bottom",
           "showLegend": true
@@ -949,7 +954,7 @@
           "groupBy": "",
           "limit": "",
           "orderBy": "",
-          "queryText": "SELECT value,time FROM pv2_power",
+          "queryText": "SELECT value,time FROM iox.pv2_power",
           "rawEditor": false,
           "refId": "A",
           "table": "pv2_power",
@@ -962,6 +967,7 @@
       ],
       "timeFrom": "now/d",
       "title": "PV2 Power (W)",
+      "transparent": true,
       "type": "timeseries"
     }
   ],
@@ -1004,6 +1010,6 @@
   "timezone": "",
   "title": "Solar PV System",
   "uid": "UwzXfgddfgkfdgserwer",
-  "version": 18,
+  "version": 22,
   "weekStart": ""
 }
