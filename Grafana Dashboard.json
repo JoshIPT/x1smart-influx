@@ -547,7 +547,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
+        "w": 4,
         "x": 0,
         "y": 8
       },
@@ -669,8 +669,8 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
-        "x": 6,
+        "w": 4,
+        "x": 4,
         "y": 8
       },
       "hideTimeOverride": false,
@@ -785,13 +785,135 @@
               }
             ]
           },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 8
+      },
+      "hideTimeOverride": false,
+      "id": 64,
+      "interval": "1h",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.1-cloud.2.a7a20fbf",
+      "targets": [
+        {
+          "columns": [
+            {
+              "value": "value"
+            },
+            {
+              "value": "time"
+            }
+          ],
+          "datasource": {
+            "type": "influxdata-flightsql-datasource",
+            "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
+          },
+          "format": "time_series",
+          "groupBy": "",
+          "limit": "",
+          "orderBy": "",
+          "queryText": "SELECT value,time FROM iox.pv1_voltage",
+          "rawEditor": false,
+          "refId": "A",
+          "table": "pv1_voltage",
+          "wheres": [
+            {
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "timeFrom": "now/d",
+      "title": "PV1 Voltage (V)",
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdata-flightsql-datasource",
+        "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
           "unit": "amp"
         },
         "overrides": []
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
+        "w": 4,
         "x": 12,
         "y": 8
       },
@@ -913,8 +1035,8 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 6,
-        "x": 18,
+        "w": 4,
+        "x": 16,
         "y": 8
       },
       "hideTimeOverride": false,
@@ -969,6 +1091,128 @@
       "title": "PV2 Power (W)",
       "transparent": true,
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdata-flightsql-datasource",
+        "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "opacity",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 20,
+        "y": 8
+      },
+      "hideTimeOverride": false,
+      "id": 65,
+      "interval": "1h",
+      "links": [],
+      "options": {
+        "legend": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.0.1-cloud.2.a7a20fbf",
+      "targets": [
+        {
+          "columns": [
+            {
+              "value": "value"
+            },
+            {
+              "value": "time"
+            }
+          ],
+          "datasource": {
+            "type": "influxdata-flightsql-datasource",
+            "uid": "cf639ad2-c41e-4604-8c1a-a6195201583a"
+          },
+          "format": "time_series",
+          "groupBy": "",
+          "limit": "",
+          "orderBy": "",
+          "queryText": "SELECT value,time FROM iox.pv2_voltage",
+          "rawEditor": false,
+          "refId": "A",
+          "table": "pv2_voltage",
+          "wheres": [
+            {
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "timeFrom": "now/d",
+      "title": "PV2 Voltage (V)",
+      "transparent": true,
+      "type": "timeseries"
     }
   ],
   "refresh": "5m",
@@ -1010,6 +1254,6 @@
   "timezone": "",
   "title": "Solar PV System",
   "uid": "UwzXfgddfgkfdgserwer",
-  "version": 22,
+  "version": 25,
   "weekStart": ""
 }
