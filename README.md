@@ -6,14 +6,13 @@ Generate an API key and save.
 
 Edit `index.json` and modify the following constants:
 
-- `server` - set to http://ip-to-your-solax/
-- `password` - this is the serial number of your solax inverter, and can be found by looking at the broadcasted wireless network
-- `INFLUXDB_TOKEN` - this is your InfluxDB API token
-- `influx_url` - at present all hosted Influx are served out of this host so this is likely fine to be left as is.
-
-Also modify the following `let`'s:
-- `let org` - your influx db organisation
-- `let bucket` - your influx db bucket/database
+- `Server` - set to http://ip-to-your-solax/
+- `Password` - this is the serial number of your solax inverter, and can be found by looking at the broadcasted wireless network
+- `PVCapacity` - The maximum capacity of your inverter (this is used to sanitise inputs)
+- `Influx_Token` - this is your InfluxDB API token
+- `Influx_URL` - at present all hosted Influx are served out of this host so this is likely fine to be left as is.
+- `Influx_Org` - this is your Influx Organisation
+- `Influx_Bucket` - this is your Influx bucket/database
 
 Setup and install supervisor - `apt install supervisor`
 
@@ -32,5 +31,7 @@ Then execute `systemctl restart supervisor.service`, then if you run `supervisor
 
 From here, link your Grafana datasource with your FlightSQL Influx datasource, information for this is available on Google.
 Once connected, import you the `Grafana Dashboard.json` file included in this git repo, this should be your graphing setup.
+
+Tested on `NodeJS v19.9.0`
 
 ![solar](https://github.com/JoshIPT/x1smart-influx/assets/44308535/d4d2b63d-0a47-4047-b0e9-90b9d7a912a0)
