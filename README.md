@@ -30,7 +30,7 @@ Replace the above path with the location of where you have cloned the repo.
 Then execute `systemctl restart supervisor.service`, then if you run `supervisorctl` you should see that x1smart is running.
 
 From here, link your Grafana datasource with your FlightSQL Influx datasource, information for this is available on Google.
-Once connected, import you the `Grafana Dashboard.json` file included in this git repo, this should be your graphing setup.
+Once connected, import the `Grafana Dashboard.json` file included in this git repo, this should be your graphing setup.
 
 Tested on `NodeJS v19.9.0`
 
